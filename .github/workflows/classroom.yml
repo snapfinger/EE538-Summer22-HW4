@@ -9,6 +9,10 @@ jobs:
     steps:
       - uses: bazelbuild/setup-bazelisk@v2
       - uses: actions/checkout@v2  
+      - uses: actions/checkout@master
+        with:
+            repository: 'ee538/Summer22_HW4_CodingGrader'
+            path: 'coding_grader'
       
       - name: Test Q1
         if: always()
