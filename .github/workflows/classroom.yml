@@ -20,7 +20,7 @@ jobs:
              echo "--------- student test ---------"
              bazel run --config=asan --ui_event_filters=-info,-stdout,-stderr //files/1:student_test 2>&1 | tee ST_Q1res.txt
              echo "--------- grader test ---------"
-             bazel run --config=asan --ui_event_filters=-info,-stdout,-stderr //sol/1:grader_test 2>&1 | tee Q1res.txt
+             bazel run --config=asan --ui_event_filters=-info,-stdout,-stderr //coding_grader/1:grader_test 2>&1 | tee Q1res.txt
              grep "OK" Q1res.txt > Q1res_.txt
              
       - name: Test Q2
@@ -29,7 +29,7 @@ jobs:
              echo "--------- student test ---------"
              bazel run --config=asan --ui_event_filters=-info,-stdout,-stderr //files/2:student_test 2>&1 | tee ST_Q2res.txt
              echo "--------- grader test ---------"
-             bazel run --config=asan --ui_event_filters=-info,-stdout,-stderr //sol/2:grader_test 2>&1 | tee Q2res.txt
+             bazel run --config=asan --ui_event_filters=-info,-stdout,-stderr //coding_grader/2:grader_test 2>&1 | tee Q2res.txt
              grep "OK" Q2res.txt > Q2res_.txt
              
       - name: Organize the total score (coding questions)
