@@ -29,6 +29,7 @@ jobs:
              grep "OK" Q2res.txt > Q2res_.txt
              
       - name: Organize the total score (coding questions)
+        if: always()
         run: |
              rm -rf grades
              rm -rf ScoresCodingTotal.txt
