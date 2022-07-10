@@ -13,6 +13,15 @@ jobs:
         with:
             repository: 'ee538/Summer22_HW4_CodingGrader'
             path: 'coding_grader'
+            
+      - name: Checkout code & Setup
+        env:
+            questions: 1 2
+        run: |
+             for f in $questions; do cp files/${f}/{q.cc,q.h} coding_grader/${f}; done
+             rm -rf grades
+             rm -rf ScoresCodingTotal.txt 
+             mkdir grades
       
       - name: Test Q1
         if: always()
