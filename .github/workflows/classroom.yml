@@ -51,7 +51,6 @@ jobs:
              mv Q*res.txt Q*res_.txt grades
              
              python .github/coding_grades_total.py 2>&1 | tee ScoresCodingTotal.txt
-
              # clean temporary files
              rm -rf grades
              rm -rf ST_*
@@ -64,4 +63,4 @@ jobs:
              git add ScoresCodingTotal.txt
              
              git commit -m "Add autograding results"
-             git push origin HEAD:main -f
+             git push origin HEAD:main
