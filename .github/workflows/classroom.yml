@@ -11,6 +11,7 @@ jobs:
       - uses: actions/checkout@v2  
       
       - name: Test Q1
+        if: always()
         run: |
              echo "--------- student test ---------"
              bazel run --config=asan --ui_event_filters=-info,-stdout,-stderr //files/1:student_test 2>&1 | tee ST_Q1res.txt
@@ -19,6 +20,7 @@ jobs:
              grep "OK" Q1res.txt > Q1res_.txt
              
       - name: Test Q2
+        if: always()
         run: |
              echo "--------- student test ---------"
              bazel run --config=asan --ui_event_filters=-info,-stdout,-stderr //files/2:student_test 2>&1 | tee ST_Q2res.txt
