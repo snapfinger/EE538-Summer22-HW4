@@ -6,6 +6,7 @@ jobs:
   build:
     name: Autograding
     runs-on: ubuntu-18.04
+    timeout-minutes: 10
     steps:
       - uses: bazelbuild/setup-bazelisk@v2
       - uses: actions/checkout@v2  
